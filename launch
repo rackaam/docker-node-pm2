@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$APP" ]; then
+    export APP=app.js
+fi
+
+cd /app
+pm2 start $APP --watch --node-args="--debug"
+pm2 logs
